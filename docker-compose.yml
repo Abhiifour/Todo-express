@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image:  postgres:15
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: randompassword
+      POSTGRES_USER: johndoe
+      POSTGRES_DB: mydb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  
+  app:
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgresql://johndoe:randompassword@postgres:5432/mydb?schema=public
+    depends_on:
+      - postgres
+
+volumes:
+  db_data:
