@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -b && node dist/index.js",
     "prisma:generate-and-migrate": "prisma generate && prisma migrate dev --name init --skip-seed",
-    "prepare": "husky",
+    "prepare": "husky install",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "keywords": [],
