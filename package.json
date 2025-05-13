@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -b && node dist/index.js",
-    "prisma:generate-and-migrate": "prisma generate && prisma migrate dev --name init --skip-seed",
+    "prisma:generate-and-migrate": "prisma generate && prisma migrate dev --name init --skip-seed"
     
   },
   "keywords": [],
