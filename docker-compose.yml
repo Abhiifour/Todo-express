@@ -21,6 +21,7 @@ services:
       - 3000:3000
     environment:
       - DATABASE_URL=postgresql://johndoe:randompassword@postgres:5432/mydb?schema=public
+      - TOKEN_KEY=abhiifour
     depends_on:
       - postgres
 
